@@ -61,7 +61,8 @@ namespace Teste.FornecedoresApi.Controlers
             
             await _empresaService.AddEmpresa(empresaDTO);
 
-            return new CreatedAtRouteResult("GetEmpresa", new {id = empresaDTO.EmpresaId},empresaDTO);
+            var crianovo = new CreatedAtRouteResult("GetEmpresa", new {id = empresaDTO.EmpresaId},empresaDTO);
+            return Ok(crianovo);
         }
 
         [HttpPut("{id:int}")]

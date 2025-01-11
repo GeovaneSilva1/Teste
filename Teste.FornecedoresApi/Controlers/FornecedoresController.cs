@@ -49,7 +49,8 @@ namespace Teste.FornecedoresApi.Controlers
 
             await _FornecedoresService.AddFornecedores(fornecedoresDTO);
 
-            return new CreatedAtRouteResult("GetFornecedores", new {id = fornecedoresDTO.Id}, fornecedoresDTO);
+            var crianovo = new CreatedAtRouteResult("GetFornecedores", new {id = fornecedoresDTO.Id}, fornecedoresDTO);
+            return Ok(crianovo);
         }
 
         [HttpPut("{id:int}")]
