@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Reflection.Metadata.Ecma335;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
@@ -79,7 +80,7 @@ namespace Teste.FornecedoresApi.Controlers
         public async Task<ActionResult<EmpresaDTO>> Delete(int id)
         {
             var empresaDTO = _empresaService.GetEmpresasById(id);
-            if (empresaDTO is null)
+            if (empresaDTO.Result is null)
                 return NotFound("Empresa não encontrada");
 
             await _empresaService.RemoveEmpresa(id);

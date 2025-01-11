@@ -26,6 +26,8 @@ namespace Teste.FornecedoresApi.DTOs
         
         [JsonIgnore]
         public Empresa? Empresa {get;set;}
+
+        [Required(ErrorMessage = "O id da empresa é Obrigatório!")]
         public int EmpresaId {get;set;}
 
     }

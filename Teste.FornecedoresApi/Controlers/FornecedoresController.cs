@@ -69,7 +69,7 @@ namespace Teste.FornecedoresApi.Controlers
         {
             var fornecedoresDTO = _FornecedoresService.GetFornecedoresById(id);
 
-            if (fornecedoresDTO is null)
+            if (fornecedoresDTO.Result is null)
                 return NotFound("Fornecedores não encontrado.");
             
             await _FornecedoresService.RemoveFornecedores(id);
